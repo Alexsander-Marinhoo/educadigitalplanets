@@ -14,11 +14,12 @@ export default function Header() {
     { name: "Diferenciais", href: "#diferenciais" },
     { name: "Cursos", href: "#cursos" },
     { name: "Metodologia", href: "#metodologia" },
+    { name: "Localização", href: "#localizacao" },
     { name: "Contato", href: "#contato" },
   ]
 
   useEffect(() => {
-    const sectionIds = ["inicio", "diferenciais", "cursos", "metodologia", "contato"]
+    const sectionIds = ["inicio", "diferenciais", "cursos", "metodologia", "localizacao", "contato"]
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 25)

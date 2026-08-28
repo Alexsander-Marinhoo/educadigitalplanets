@@ -25,7 +25,10 @@ export default function DifferentialsSection() {
   ]
 
   return (
-    <section id="diferenciais" className="relative bg-white py-16 sm:py-20 lg:py-24 overflow-hidden border-b border-slate-200">
+    <section
+      id="diferenciais"
+      className="relative bg-white py-16 sm:py-20 lg:py-24 overflow-hidden border-b border-slate-200"
+    >
       {/* Curved Dashed Line Decorative Vector Background looping like the reference */}
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none z-0"
@@ -46,7 +49,7 @@ export default function DifferentialsSection() {
       </svg>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8">
-        {/* Section Title with High Impact */}
+        {/* Section Title */}
         <div className="max-w-3xl text-left mb-12 sm:mb-16 space-y-3">
           <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-[44px] text-slate-900 leading-[1.12] tracking-tight">
             A rede de ensino <span className="text-[#3774B0]">Educa Digital Planets</span> é uma das melhores e mais tradicionais da região
@@ -86,4 +89,3 @@ export default function DifferentialsSection() {
     </section>
   )
 }
-

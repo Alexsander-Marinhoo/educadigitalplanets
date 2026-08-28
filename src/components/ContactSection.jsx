@@ -44,30 +44,23 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contato" className="py-20 lg:py-24 bg-white border-b border-slate-200 relative overflow-hidden">
+    <section
+      id="contato"
+      className="py-20 lg:py-24 bg-white border-b border-slate-200 relative overflow-hidden"
+    >
       {/* Curved background vector accents */}
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none z-0"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
-        preserveAspectRatio="none"
         viewBox="0 0 1440 700"
       >
         <path
-          d="M-50,200 C300,50 600,350 950,150 C1250,-20 1400,300 1500,200"
+          d="M-50,450 C300,600 650,200 1000,450 C1250,600 1380,300 1500,400"
           stroke="#3774B0"
           strokeOpacity="0.18"
           strokeWidth="1.5"
           strokeDasharray="6 6"
-          fill="none"
-        />
-        <path
-          d="M100,650 C400,480 800,680 1100,520 C1300,400 1450,600 1550,550"
-          stroke="#5CA8D7"
-          strokeOpacity="0.22"
-          strokeWidth="1.2"
-          strokeDasharray="5 5"
-          fill="none"
         />
       </svg>
 

@@ -31,7 +31,10 @@ export default function Footer() {
   }
 
   return (
-    <footer id="contato" className="bg-[#245380] text-white font-sans antialiased border-t border-[#5CA8D7]/30 selection:bg-[#5CA8D7] selection:text-[#245380]">
+    <footer
+      id="contato"
+      className="bg-[#245380] text-white font-sans antialiased border-t border-[#5CA8D7]/30 selection:bg-[#5CA8D7] selection:text-[#245380]"
+    >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         
         {/* ========================================================================= */}
@@ -74,11 +77,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#metodologia"
-                  onClick={(e) => handleLinkClick(e, "#metodologia")}
+                  href="#localizacao"
+                  onClick={(e) => handleLinkClick(e, "#localizacao")}
                   className="text-slate-100 hover:text-white hover:underline transition-all duration-200 cursor-pointer block"
                 >
-                  Programas de Ensino
+                  Localização &amp; Como Chegar
                 </a>
               </li>
             </ul>
@@ -168,12 +171,12 @@ export default function Footer() {
                 </a>
               </div>
               <div className="text-slate-200 pt-1 text-xs sm:text-sm">
-                Rua Principal de Ensino, 100 - Centro
+                {SCHOOL_INFO.address}
                 <br />
-                São Paulo • SP — CEP 01000-000
+                {SCHOOL_INFO.cityStateZip}
               </div>
               <div className="text-xs text-[#9BBE1D] font-bold pt-1">
-                Presencial • Segunda a Sexta: 08h às 21h | Sábados: 08h às 16h
+                Presencial • {SCHOOL_INFO.openingHours}
               </div>
             </div>
           </div>

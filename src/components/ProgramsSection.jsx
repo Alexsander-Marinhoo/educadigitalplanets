@@ -127,7 +127,10 @@ export default function ProgramsSection() {
   ]
 
   return (
-    <section id="metodologia" className="relative bg-white py-16 lg:py-24 overflow-hidden border-b border-slate-200">
+    <section
+      id="metodologia"
+      className="relative bg-white py-16 lg:py-24 overflow-hidden border-b border-slate-200"
+    >
       {/* Curved Dashed Line Decorative Background */}
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none z-0"
@@ -155,7 +158,7 @@ export default function ProgramsSection() {
       </svg>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 text-left">
-        {/* Main Section Header with High Impact */}
+        {/* Main Section Header */}
         <div className="mb-12 space-y-3">
           <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-[44px] text-slate-900 leading-[1.12] tracking-tight">
             Nossos <span className="text-[#3774B0]">Programas de Ensino</span>
@@ -195,10 +198,10 @@ export default function ProgramsSection() {
                 },
               }}
               grabCursor={true}
-              className="!overflow-visible"
+              className="w-full"
             >
               {kidsPrograms.map((item, idx) => (
-                <SwiperSlide key={idx} className="!h-auto flex">
+                <SwiperSlide key={idx} className="!h-auto pb-4">
                   <ProgramCard item={item} />
                 </SwiperSlide>
               ))}
@@ -206,7 +209,7 @@ export default function ProgramsSection() {
           </div>
         </div>
 
-        {/* Category 2: Grupos por Faixa Etária e Cursos Profissionais */}
+        {/* Category 2: Programas para Jovens e Adultos */}
         <div>
           <h3 className="font-heading font-black text-lg sm:text-xl text-slate-900 flex items-center gap-2.5 mb-6">
             <span className="w-3 h-3 rounded-full bg-[#16A34A] shrink-0"></span>
@@ -236,18 +239,18 @@ export default function ProgramsSection() {
                 },
               }}
               grabCursor={true}
-              className="!overflow-visible"
+              className="w-full"
             >
               {adultPrograms.map((item, idx) => (
-                <SwiperSlide key={idx} className="!h-auto flex">
+                <SwiperSlide key={idx} className="!h-auto pb-4">
                   <ProgramCard item={item} />
                 </SwiperSlide>
               ))}
             </Swiper>
           </div>
         </div>
+
       </div>
     </section>
   )
 }
-

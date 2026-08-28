@@ -73,13 +73,16 @@ export default function Hero() {
   }, [])
 
   return (
-    <section id="inicio" className="relative min-h-[660px] lg:min-h-[760px] flex items-center overflow-hidden bg-[#f4f1ea] pt-28 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 border-b border-slate-200">
+    <section
+      id="inicio"
+      className="relative min-h-[660px] lg:min-h-[760px] flex items-center overflow-hidden bg-[#f4f1ea] pt-28 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 border-b border-slate-200"
+    >
       
       {/* ========================================================================= */}
       {/* 1. Desktop Only: Seamless Full-Bleed Students Photo on the Right */}
       {/* ========================================================================= */}
       <div
-        className="hidden lg:block absolute inset-y-0 right-0 w-[50%] xl:w-[52%] h-full z-0 pointer-events-none"
+        className="hero-student-photo hidden lg:block absolute inset-y-0 right-0 w-[50%] xl:w-[52%] h-full z-0 pointer-events-none"
         style={{
           maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 15%, rgba(0,0,0,1) 32%), linear-gradient(to top, transparent 0%, rgba(0,0,0,1) 6%)",
           WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 15%, rgba(0,0,0,1) 32%), linear-gradient(to top, transparent 0%, rgba(0,0,0,1) 6%)",
@@ -102,32 +105,32 @@ export default function Hero() {
         <div className="relative w-full h-full">
           
           {/* Lightbulb Doodle (Top Center-Right) */}
-          <div className="absolute top-28 lg:top-36 right-[35%] lg:right-[42%] text-[#3774B0]/50 animate-pulse hidden sm:block">
+          <div className="hero-doodle-icon absolute top-28 lg:top-36 right-[35%] lg:right-[42%] text-[#3774B0]/50 animate-pulse hidden sm:block">
             <DoodleLightbulb className="w-12 h-12 sm:w-16 sm:h-16" />
           </div>
 
           {/* Graduation Cap Doodle (Top Right) */}
-          <div className="absolute top-24 lg:top-32 right-8 sm:right-24 text-[#0F2E59]/40">
+          <div className="hero-doodle-icon absolute top-24 lg:top-32 right-8 sm:right-24 text-[#0F2E59]/40">
             <DoodleGraduationCap className="w-16 h-16 sm:w-20 sm:h-20" />
           </div>
 
           {/* Science Beaker (Middle Center) */}
-          <div className="absolute top-[45%] right-[45%] lg:right-[48%] text-[#5CA8D7]/50 hidden md:block">
+          <div className="hero-doodle-icon absolute top-[45%] right-[45%] lg:right-[48%] text-[#5CA8D7]/50 hidden md:block">
             <DoodleBeaker className="w-10 h-10 sm:w-12 sm:h-12" />
           </div>
 
           {/* Paper Airplane (Left of Students) */}
-          <div className="absolute top-48 left-[42%] lg:left-[46%] text-[#3774B0]/50 -rotate-12 hidden lg:block">
+          <div className="hero-doodle-icon absolute top-48 left-[42%] lg:left-[46%] text-[#3774B0]/50 -rotate-12 hidden lg:block">
             <DoodlePaperPlane className="w-10 h-10 sm:w-14 sm:h-14" />
           </div>
 
           {/* Diploma Doodle (Right Edge) */}
-          <div className="absolute bottom-36 right-4 sm:right-12 text-[#9BBE1D]/70 hidden sm:block">
+          <div className="hero-doodle-icon absolute bottom-36 right-4 sm:right-12 text-[#9BBE1D]/70 hidden sm:block">
             <DoodleDiploma className="w-12 h-12 sm:w-16 sm:h-16" />
           </div>
 
           {/* Motivational Poster in the Background ("SEU FUTURO COMEÇA AGORA.") */}
-          <div className="absolute top-44 lg:top-48 right-[24%] lg:right-[28%] bg-white/85 backdrop-blur-xs border border-slate-300/80 rounded-xl px-3 py-2 text-center shadow-xs hidden xl:block -rotate-2">
+          <div className="hero-doodle-icon absolute top-44 lg:top-48 right-[24%] lg:right-[28%] bg-white/85 backdrop-blur-xs border border-slate-300/80 rounded-xl px-3 py-2 text-center shadow-xs hidden xl:block -rotate-2">
             <span className="text-[10px] font-extrabold text-[#3774B0] block tracking-wider leading-tight">
               SEU FUTURO.
             </span>
@@ -168,7 +171,7 @@ export default function Hero() {
                 Educa Digital!
               </span>
               <br />
-              <span className="text-[#1A4B88]">
+              <span className="text-[#1A4B88] inline-block mt-1">
                 O seu futuro profissional começa agora.
               </span>
             </h1>
@@ -215,7 +218,7 @@ export default function Hero() {
           </div>
 
           {/* Solid Vibrant Green CTA Button */}
-          <div className="pt-1">
+          <div className="hero-fade-content pt-1">
             <a
               href={createWhatsAppLink(whatsappHeroMsg)}
               target="_blank"
@@ -236,7 +239,7 @@ export default function Hero() {
         {/* ========================================================================= */}
         {/* Mobile & Tablet Only: 100% Full-Width Clean Image at Bottom */}
         {/* ========================================================================= */}
-        <div className="relative block lg:hidden pt-8 -mx-6 sm:-mx-8 md:-mx-10 lg:-mx-12 -mb-16 w-[calc(100%+3rem)] sm:w-[calc(100%+4rem)] md:w-[calc(100%+5rem)] lg:w-[calc(100%+6rem)] overflow-hidden">
+        <div className="hero-student-photo relative block lg:hidden pt-8 -mx-6 sm:-mx-8 md:-mx-10 lg:-mx-12 -mb-16 w-[calc(100%+3rem)] sm:w-[calc(100%+4rem)] md:w-[calc(100%+5rem)] lg:w-[calc(100%+6rem)] overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=90"
             alt="Estudantes da Educa Digital Planets"
