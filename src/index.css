@@ -1,0 +1,79 @@
+﻿@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --color-brand-dark: #0A2240;
+  --color-brand-navy: #0F2E59;
+  --color-brand-blue: #1A4B88;
+  --color-brand-royal: #3774B0;
+  --color-brand-light: #5CA8D7;
+  --color-brand-lime: #9BBE1D;
+  
+  --color-cta: #16A34A;
+  --color-cta-hover: #15803D;
+  --color-cta-active: #14532D;
+  
+  --color-bg-warm: #f4f1ea;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #1e293b;
+  background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Dual Continuous Marquee Sliders with Sub-Pixel GPU Interpolation */
+@keyframes marquee-scroll-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-scroll-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll-left 65s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll-right 65s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Subtle High-Performance Texture Patterns */
+.bg-pattern-dots {
+  background-image: radial-gradient(rgba(55, 116, 176, 0.12) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+

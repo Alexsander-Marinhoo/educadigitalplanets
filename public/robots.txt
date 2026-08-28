@@ -1,0 +1,5 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://educadigitalplanets.com.br/sitemap.xml
+
