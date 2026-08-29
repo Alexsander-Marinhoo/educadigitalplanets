@@ -141,24 +141,24 @@ function ContactStoriesCard() {
         />
       ))}
 
-      {/* Overlay Gradiente Suave para Leitura dos Textos */}
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/20 to-slate-950/50 pointer-events-none" />
+      {/* Overlay apenas na base inferior para leitura do texto, deixando o restante 100% claro e nítido */}
+      <div className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent pointer-events-none" />
 
-      {/* Topo: Barrinhas de Progresso + Selo de Matrículas Abertas agrupados no Topo */}
+      {/* Topo: Barrinhas de Progresso + Selo de Matrículas Abertas */}
       <div className="relative z-20 px-4 pt-3.5 sm:px-5 sm:pt-4 space-y-2.5 w-full pointer-events-none">
-        {/* Barrinhas de Progresso */}
+        {/* Barrinhas de Progresso com contraste limpo */}
         <div className="flex items-center gap-1.5 w-full">
           {FACEBOOK_STORIES.map((_, idx) => (
             <div
               key={idx}
-              className="flex-1 h-1 sm:h-1.5 bg-white/30 backdrop-blur-xs rounded-full overflow-hidden"
+              className="flex-1 h-1 sm:h-1.5 bg-black/30 backdrop-blur-xs rounded-full overflow-hidden border border-white/20 shadow-xs"
             >
               {idx < currentIndex ? (
                 <div className="h-full w-full bg-white rounded-full" />
               ) : idx === currentIndex ? (
                 <div
                   key={currentIndex}
-                  className="h-full bg-white rounded-full"
+                  className="h-full bg-white rounded-full shadow-xs"
                   style={{
                     animation: `story-progress ${STORY_DURATION}ms linear forwards`,
                     animationPlayState: isPaused ? "paused" : "running",
@@ -171,7 +171,7 @@ function ContactStoriesCard() {
           ))}
         </div>
 
-        {/* Selo Superior de Matrículas Abertas posicionado logo abaixo da barrinha */}
+        {/* Selo Superior de Matrículas Abertas */}
         <div className="flex items-center justify-start">
           <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-slate-200 shadow-md flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-[#16A34A] animate-pulse"></span>
@@ -185,10 +185,10 @@ function ContactStoriesCard() {
         <span className="inline-block px-3 py-1 rounded-full bg-[#9BBE1D] text-[#245380] text-[11px] font-heading font-black tracking-wide uppercase shadow-xs">
           {currentSlide.badge}
         </span>
-        <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-white leading-tight drop-shadow-sm">
+        <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-white leading-tight drop-shadow-md">
           {currentSlide.title}
         </h3>
-        <p className="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed drop-shadow-xs">
+        <p className="text-xs sm:text-sm text-slate-100 font-normal leading-relaxed drop-shadow-sm">
           {currentSlide.desc}
         </p>
       </div>
