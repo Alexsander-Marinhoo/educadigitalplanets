@@ -1,4 +1,4 @@
-﻿import { MessageCircle, MapPin, Check, Monitor, Users2, ShieldCheck, Sparkles } from "lucide-react"
+import { MessageCircle, MapPin, Check, Monitor, Users2, ShieldCheck, Sparkles } from "lucide-react"
 import { REAL_PHOTOS, SCHOOL_INFO, createWhatsAppLink } from "../data/content"
 
 export default function StructureGallery() {
@@ -38,7 +38,7 @@ export default function StructureGallery() {
                   alt={photo.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
-                    e.target.src = "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80"
+                    e.target.src = "/images/sala-aulas-praticas.jpg"
                   }}
                 />
                 <span className="absolute top-3 right-3 bg-brand-dark/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">

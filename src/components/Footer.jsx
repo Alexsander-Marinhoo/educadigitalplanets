@@ -167,7 +167,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-slate-100 hover:text-white hover:underline transition-all duration-200 block font-medium"
                 >
-                  +55 (11) 98340-6358 (WhatsApp)
+                  +55 {SCHOOL_INFO.phoneFormatted} (WhatsApp)
                 </a>
               </div>
               <div className="text-slate-200 pt-1 text-xs sm:text-sm">

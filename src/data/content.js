@@ -1,9 +1,9 @@
 export const SCHOOL_INFO = {
   name: "Educa Digital Planets",
   slogan: "20 anos de tradição em ensino profissionalizante",
-  phoneFormatted: "(11) 98340-6358",
-  phoneRaw: "5511983406358",
-  whatsappNumber: "5511983406358",
+  phoneFormatted: "(11) 97739-7802",
+  phoneRaw: "5511977397802",
+  whatsappNumber: "5511977397802",
   facebookUrl: "https://www.facebook.com/educadigitalplanets",
   address: "Avenida Professor Alípio de Barros, 963",
   cityStateZip: "São Paulo - SP • CEP 08180-000",
@@ -189,19 +189,19 @@ export const REAL_PHOTOS = [
     title: "Salas de Aulas Práticas",
     description: "Ambientes climatizados e confortáveis preparados para turmas reduzidas.",
     tag: "Conforto",
-    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80",
+    image: "/images/sala-aulas-praticas.jpg",
   },
   {
     title: "Acompanhamento Individual",
     description: "Professores presentes tirando dúvidas de cada aluno durante os exercícios.",
     tag: "Metodologia",
-    image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80",
+    image: "/images/acompanhamento-individual.jpg",
   },
   {
     title: "Turmas Interativas",
     description: "Dinâmicas em grupo para desenvolvimento de conversação e liderança.",
     tag: "Ambiente",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
+    image: "/images/turmas-interativas.jpg",
   },
 ]
 

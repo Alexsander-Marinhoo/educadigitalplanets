@@ -91,7 +91,7 @@ export default function Hero() {
         }}
       >
         <img
-          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=90"
+          src="/images/turmas-interativas.jpg"
           alt="Jovens estudantes da Educa Digital Planets"
           className="w-full h-full object-cover object-center brightness-[1.02] contrast-[1.06] saturate-[1.12]"
           loading="eager"
@@ -241,7 +241,7 @@ export default function Hero() {
         {/* ========================================================================= */}
         <div className="hero-student-photo relative block lg:hidden pt-8 -mx-6 sm:-mx-8 md:-mx-10 lg:-mx-12 -mb-16 w-[calc(100%+3rem)] sm:w-[calc(100%+4rem)] md:w-[calc(100%+5rem)] lg:w-[calc(100%+6rem)] overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=90"
+            src="/images/turmas-interativas.jpg"
             alt="Estudantes da Educa Digital Planets"
             className="w-full h-[300px] sm:h-[380px] md:h-[440px] object-cover object-center"
             style={{

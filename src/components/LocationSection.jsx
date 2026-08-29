@@ -7,28 +7,28 @@ import { SCHOOL_INFO } from "../data/content"
 const STORY_SLIDES = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sala-aulas-praticas.jpg",
     badge: "Laboratório de Informática",
     title: "Laboratórios Modernos & Climatizados",
     desc: "1 computador individual por aluno com internet rápida e softwares atualizados.",
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/acompanhamento-individual.jpg",
     badge: "Salas de Aulas Práticas",
     title: "Acompanhamento Individual com Professores",
     desc: "Metodologia humanizada com suporte direto em sala para tirar dúvidas na hora.",
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/educacao-inclusiva.jpg",
     badge: "Educação Inclusiva",
     title: "Espaço Preparado para Alunos com TEA",
     desc: "Estrutura acolhedora, paciência e didática adaptada em Informática e Inglês.",
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/turmas-interativas.jpg",
     badge: "Tradição & Localização",
     title: "20 Anos Formando Alunos na Região",
     desc: "Fácil acesso na Av. Prof. Alípio de Barros, 963 com estacionamento e transporte.",
