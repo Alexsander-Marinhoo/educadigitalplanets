@@ -1,0 +1,24 @@
+{
+  "name": "Educa Digital Planets | Cursos Profissionalizantes",
+  "short_name": "Educa Digital",
+  "description": "20 anos de tradição em ensino profissionalizante presencial em São Paulo. Cursos de Informática, Inglês, Comunicação, Vendas e Reforço Escolar.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3774B0",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "48x48 72x72 96x96 128x128 192x192 256x256 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

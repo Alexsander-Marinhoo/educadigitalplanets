@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://educadigitalplanets.vercel.app/sitemap.xml
+Sitemap: https://www.educadigitalplanets.com.br/sitemap.xml
