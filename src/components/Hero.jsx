@@ -1,5 +1,5 @@
 import { createWhatsAppLink } from "../data/content"
-import { MapPin, Users, CheckCircle2 } from "lucide-react"
+import { MapPin } from "lucide-react"
 
 // Educational Doodle Icons (matching the reference banner style)
 function DoodleLightbulb({ className = "w-12 h-12" }) {
@@ -173,7 +173,7 @@ export default function Hero() {
           </div>
 
           {/* High-Conversion Compliant Urgency & Status Box (Google Ads Safe) */}
-          <div className="bg-[#3774B0] text-white p-4 sm:p-5 rounded-2xl border-2 border-[#9BBE1D] shadow-xl max-w-md sm:max-w-lg space-y-2.5">
+          <div className="bg-[#3774B0] text-white p-4 sm:p-5 rounded-2xl border-2 border-[#9BBE1D] shadow-xl max-w-md sm:max-w-lg space-y-2">
             <div className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-[#9BBE1D] flex items-center justify-between gap-2">
               <span className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#9BBE1D] animate-pulse"></span>
@@ -184,18 +184,7 @@ export default function Hero() {
               </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-2 text-xs sm:text-sm font-semibold text-slate-100 pt-0.5">
-              <div className="flex items-center gap-1.5 bg-[#245380]/80 px-2.5 py-1.5 rounded-lg border border-[#5CA8D7]/30">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#9BBE1D] shrink-0" />
-                <span>1 Aluno por Computador</span>
-              </div>
-              <div className="flex items-center gap-1.5 bg-[#245380]/80 px-2.5 py-1.5 rounded-lg border border-[#5CA8D7]/30">
-                <Users className="w-3.5 h-3.5 text-[#9BBE1D] shrink-0" />
-                <span>Turmas Reduzidas</span>
-              </div>
-            </div>
-
-            <p className="text-[11px] sm:text-xs text-slate-200 font-normal leading-tight">
+            <p className="text-xs sm:text-sm text-slate-100 font-medium leading-relaxed">
               📍 Av. Prof. Alípio de Barros, 963 — Garanta sua vaga com condição especial presencial.
             </p>
           </div>
