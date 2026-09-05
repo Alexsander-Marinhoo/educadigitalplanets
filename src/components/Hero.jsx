@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react"
 import { createWhatsAppLink } from "../data/content"
+import { MapPin, Users, CheckCircle2 } from "lucide-react"
 
 // Educational Doodle Icons (matching the reference banner style)
 function DoodleLightbulb({ className = "w-12 h-12" }) {
@@ -55,22 +55,7 @@ function DoodleDiploma({ className = "w-12 h-12" }) {
 }
 
 export default function Hero() {
-  const whatsappHeroMsg = "Olá! Gostaria de agendar uma aula experimental presencial e garantir minha condição especial na Educa Digital Planets."
-
-  // Countdown timer for high conversion urgency
-  const [timeLeft, setTimeLeft] = useState({ hours: 2, minutes: 54, seconds: 59 })
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.seconds > 0) return { ...prev, seconds: prev.seconds - 1 }
-        if (prev.minutes > 0) return { ...prev, minutes: prev.minutes - 1, seconds: 59 }
-        if (prev.hours > 0) return { hours: prev.hours - 1, minutes: 59, seconds: 59 }
-        return { hours: 2, minutes: 54, seconds: 59 }
-      })
-    }, 1000)
-    return () => clearInterval(timer)
-  }, [])
+  const whatsappHeroMsg = "Olá! Gostaria de agendar uma aula experimental presencial no Jardim Silva Teles e garantir minha condição especial na Educa Digital Planets."
 
   return (
     <section
@@ -162,8 +147,14 @@ export default function Hero() {
       {/* 3. Main Content: Text on TOP, Image on BOTTOM on Mobile/Tablet */}
       {/* ========================================================================= */}
       <div className="relative z-30 w-full sm:w-[96%] max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
-        <div className="max-w-2xl lg:max-w-2xl text-left space-y-6">
+        <div className="max-w-2xl lg:max-w-2xl text-left space-y-5 sm:space-y-6">
           
+          {/* Badge Destacado de Localização Presencial */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#3774B0]/10 border border-[#3774B0]/25 text-[#245380] text-xs sm:text-sm font-bold shadow-2xs">
+            <MapPin className="w-4 h-4 text-[#16A34A] shrink-0" />
+            <span>Escola Presencial em <strong>Jardim Silva Teles • São Paulo (Zona Leste)</strong></span>
+          </div>
+
           {/* Main Punchy Title */}
           <div className="space-y-2">
             <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-[52px] text-[#3774B0] leading-[1.12] tracking-tight">
@@ -181,40 +172,32 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* High-Conversion Urgency Box in Project Royal Blue */}
-          <div className="bg-[#3774B0] text-white p-4 sm:p-5 rounded-2xl border-2 border-[#16A34A] shadow-xl max-w-md sm:max-w-lg">
-            <div className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-[#9BBE1D] mb-2.5 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#9BBE1D] animate-ping"></span>
-              <span className="text-white">Condição Especial de Matrícula termina em:</span>
+          {/* High-Conversion Compliant Urgency & Status Box (Google Ads Safe) */}
+          <div className="bg-[#3774B0] text-white p-4 sm:p-5 rounded-2xl border-2 border-[#9BBE1D] shadow-xl max-w-md sm:max-w-lg space-y-2.5">
+            <div className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-[#9BBE1D] flex items-center justify-between gap-2">
+              <span className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#9BBE1D] animate-pulse"></span>
+                <span className="text-white">Matrículas Abertas para Novas Turmas</span>
+              </span>
+              <span className="bg-[#245380] text-[#9BBE1D] text-[10px] font-bold px-2 py-0.5 rounded-full border border-[#5CA8D7]/30">
+                Presencial
+              </span>
             </div>
 
-            {/* Countdown Digits */}
-            <div className="flex items-center gap-3">
-              <div className="bg-[#245380] border border-[#5CA8D7]/40 rounded-xl px-3 py-2 text-center min-w-[64px]">
-                <div className="text-xl sm:text-2xl font-black font-heading text-white tracking-wider">
-                  {String(timeLeft.hours).padStart(2, "0")}
-                </div>
-                <div className="text-[9px] uppercase font-bold text-slate-200">HORAS</div>
+            <div className="grid grid-cols-2 gap-2 text-xs sm:text-sm font-semibold text-slate-100 pt-0.5">
+              <div className="flex items-center gap-1.5 bg-[#245380]/80 px-2.5 py-1.5 rounded-lg border border-[#5CA8D7]/30">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#9BBE1D] shrink-0" />
+                <span>1 Aluno por Computador</span>
               </div>
-
-              <span className="text-xl font-bold text-[#9BBE1D]">:</span>
-
-              <div className="bg-[#245380] border border-[#5CA8D7]/40 rounded-xl px-3 py-2 text-center min-w-[64px]">
-                <div className="text-xl sm:text-2xl font-black font-heading text-white tracking-wider">
-                  {String(timeLeft.minutes).padStart(2, "0")}
-                </div>
-                <div className="text-[9px] uppercase font-bold text-slate-200">MINUTOS</div>
-              </div>
-
-              <span className="text-xl font-bold text-[#9BBE1D]">:</span>
-
-              <div className="bg-[#245380] border border-[#5CA8D7]/40 rounded-xl px-3 py-2 text-center min-w-[64px]">
-                <div className="text-xl sm:text-2xl font-black font-heading text-[#9BBE1D] tracking-wider">
-                  {String(timeLeft.seconds).padStart(2, "0")}
-                </div>
-                <div className="text-[9px] uppercase font-bold text-slate-200">SEGUNDOS</div>
+              <div className="flex items-center gap-1.5 bg-[#245380]/80 px-2.5 py-1.5 rounded-lg border border-[#5CA8D7]/30">
+                <Users className="w-3.5 h-3.5 text-[#9BBE1D] shrink-0" />
+                <span>Turmas Reduzidas</span>
               </div>
             </div>
+
+            <p className="text-[11px] sm:text-xs text-slate-200 font-normal leading-tight">
+              📍 Av. Prof. Alípio de Barros, 963 — Garanta sua vaga com condição especial presencial.
+            </p>
           </div>
 
           {/* Solid Vibrant Green CTA Button */}

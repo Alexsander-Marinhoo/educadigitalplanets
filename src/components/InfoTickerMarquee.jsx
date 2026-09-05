@@ -1,10 +1,12 @@
-﻿export default function InfoTickerMarquee() {
+export default function InfoTickerMarquee() {
   const items = [
+    "📍 Aulas Presenciais no Jardim Silva Teles (SP)",
     "Inglês Prático & Conversação",
     "Informática Profissionalizante",
     "Comunicação, Vendas & Oratória",
     "Reforço Escolar Individual",
     "Metodologia 100% Prática e Presencial",
+    "Av. Prof. Alípio de Barros, 963 - Zona Leste",
     "Turmas Kids, Teens e Adultos",
     "Mais de 20 Anos de Tradição",
     "Acompanhamento Direto na Máquina",

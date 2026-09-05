@@ -171,12 +171,14 @@ export default function Footer() {
                 </a>
               </div>
               <div className="text-slate-200 pt-1 text-xs sm:text-sm">
-                {SCHOOL_INFO.address}
+                <span className="font-semibold text-white">📍 {SCHOOL_INFO.address}</span>
                 <br />
-                {SCHOOL_INFO.cityStateZip}
+                <span className="text-[#9BBE1D] font-medium">{SCHOOL_INFO.neighborhoodCity}</span>
+                <br />
+                <span className="text-slate-300 text-xs">Zona Leste • CEP {SCHOOL_INFO.zipCode}</span>
               </div>
               <div className="text-xs text-[#9BBE1D] font-bold pt-1">
-                Presencial • {SCHOOL_INFO.openingHours}
+                Aulas 100% Presenciais • {SCHOOL_INFO.openingHours}
               </div>
             </div>
           </div>
@@ -191,9 +193,16 @@ export default function Footer() {
         {/* ========================================================================= */}
         <div className="py-8 sm:py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-slate-200">
           
-          {/* Metadados e Copyright */}
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-center sm:text-left">
+          {/* Metadados, Política de Privacidade e Copyright */}
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 text-center sm:text-left">
             <span>© {new Date().getFullYear()} Educa Digital Planets. Todos os direitos reservados.</span>
+            <span className="hidden sm:inline text-[#5CA8D7]">•</span>
+            <a
+              href="#politica-de-privacidade"
+              className="text-slate-300 hover:text-white hover:underline transition-colors cursor-pointer"
+            >
+              Política de Privacidade
+            </a>
             <span className="hidden sm:inline text-[#5CA8D7]">•</span>
             <a
               href="https://www.instagram.com/alexsander.code/"
