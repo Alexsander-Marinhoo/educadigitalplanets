@@ -106,23 +106,19 @@ export default function Header() {
           scrolled ? "shadow-xl border-[#3774B0]/40 sm:scale-[0.995]" : ""
         }`}
       >
-        {/* Left: Logo + Localização Presencial */}
+        {/* Left: Logo Only */}
         <a
           href="#inicio"
           onClick={(e) => handleNavClick(e, "#inicio")}
-          className="flex flex-col items-start shrink-0 group cursor-pointer py-0.5"
-          title="Educa Digital Planets - Jardim Silva Teles, São Paulo"
+          className="flex items-center shrink-0 group cursor-pointer py-0.5"
+          title="Educa Digital Planets"
         >
           <img
             src="/logo.svg"
             alt="Educa Digital Planets Logo"
-            className="h-14 sm:h-16 md:h-18 lg:h-20 w-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] object-contain transition-transform duration-300 group-hover:scale-105"
+            className="h-16 sm:h-18 md:h-20 lg:h-22 w-auto max-w-[180px] sm:max-w-[220px] md:max-w-[260px] object-contain transition-transform duration-300 group-hover:scale-105"
             loading="eager"
           />
-          <span className="hidden sm:inline-flex items-center gap-1 text-[10px] md:text-[11px] font-bold text-[#245380] bg-[#3774B0]/10 px-2 py-0.5 rounded-md mt-0.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#16A34A] shrink-0" />
-            Jardim Silva Teles • São Paulo (ZL)
-          </span>
         </a>
 
         {/* Center: Larger Floating Pill Navigation Track */}
