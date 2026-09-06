@@ -124,6 +124,8 @@ export default function OrbitCoursesSection() {
       iconComponent: <IconOrbitTutoring />,
       position: "bottom-8 sm:bottom-10 md:bottom-12 right-1 sm:right-4 md:right-8 lg:right-12",
       msg: "Olá! Gostaria de saber mais sobre o Reforço Escolar na Educa Digital Planets.",
+      pageLink: "#reforco-escolar",
+      isNew: true,
     },
   ]
 
@@ -277,28 +279,46 @@ export default function OrbitCoursesSection() {
           </svg>
 
           {/* Orbit Course Badges positioned around the child (z-30) */}
-          {coursesOrbit.map((item, idx) => (
-            <a
-              key={idx}
-              href={createWhatsAppLink(item.msg)}
-              target="_blank"
-              rel="noreferrer"
-              className={`orbit-badge-card absolute ${item.position} bg-white/95 backdrop-blur-md rounded-3xl p-3.5 sm:p-4 lg:p-5 shadow-xl border border-slate-200/90 flex flex-col items-center gap-1.5 sm:gap-2 z-30 cursor-pointer min-w-[140px] sm:min-w-[170px] lg:min-w-[200px]`}
-            >
-              {/* Clean Vector Badge Icon */}
-              {item.iconComponent}
+          {coursesOrbit.map((item, idx) => {
+            const isReforco = !!item.pageLink
+            return (
+              <a
+                key={idx}
+                href={isReforco ? item.pageLink : createWhatsAppLink(item.msg)}
+                target={isReforco ? undefined : "_blank"}
+                rel={isReforco ? undefined : "noreferrer"}
+                onClick={
+                  isReforco
+                    ? () => {
+                        window.location.hash = "reforco-escolar"
+                        window.scrollTo({ top: 0, behavior: "smooth" })
+                      }
+                    : undefined
+                }
+                className={`orbit-badge-card absolute ${item.position} bg-white/95 backdrop-blur-md rounded-3xl p-3.5 sm:p-4 lg:p-5 shadow-xl border ${
+                  isReforco ? "border-[#9BBE1D] ring-2 ring-[#9BBE1D]/40" : "border-slate-200/90"
+                } flex flex-col items-center gap-1.5 sm:gap-2 z-30 cursor-pointer min-w-[140px] sm:min-w-[170px] lg:min-w-[200px] transition-transform hover:scale-105`}
+              >
+                {/* Clean Vector Badge Icon */}
+                {item.iconComponent}
 
-              {/* Title & Subtitle */}
-              <div className="text-center">
-                <span className="font-heading font-bold text-xs sm:text-sm lg:text-base text-[#3774B0] block leading-tight">
-                  {item.name}
-                </span>
-                <span className="text-[11px] sm:text-xs text-slate-500 font-medium block mt-0.5">
-                  {item.sub}
-                </span>
-              </div>
-            </a>
-          ))}
+                {/* Title & Subtitle */}
+                <div className="text-center">
+                  <span className="font-heading font-bold text-xs sm:text-sm lg:text-base text-[#3774B0] block leading-tight">
+                    {item.name}
+                  </span>
+                  <span className="text-[11px] sm:text-xs text-slate-500 font-medium block mt-0.5">
+                    {item.sub}
+                  </span>
+                  {isReforco && (
+                    <span className="inline-block mt-1 text-[10px] font-black text-[#0A2240] bg-[#9BBE1D] px-2 py-0.5 rounded-full uppercase tracking-wider">
+                      Ver Turma Nova
+                    </span>
+                  )}
+                </div>
+              </a>
+            )
+          })}
 
           {/* Central Happy Student Girl Child (z-20: In front of orbit line, head above the circle) */}
           <div className="orbit-student-img relative z-20 w-[420px] sm:w-[580px] md:w-[680px] lg:w-[760px] xl:w-[820px] flex items-end justify-center pointer-events-none -mb-16 sm:-mb-24 md:-mb-28 lg:-mb-32">

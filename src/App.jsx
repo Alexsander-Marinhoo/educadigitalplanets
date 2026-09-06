@@ -10,51 +10,86 @@ import ContactSection from "./components/ContactSection"
 import Footer from "./components/Footer"
 import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton"
 import PrivacyPolicy from "./components/PrivacyPolicy"
+import ReforcoEscolarPage from "./components/ReforcoEscolarPage"
 import { initLenis, smoothScrollTo } from "./utils/lenis"
 
+function getInitialPage() {
+  const hash = window.location.hash.toLowerCase()
+  const path = window.location.pathname.toLowerCase()
+
+  if (hash === "#politica-de-privacidade" || path.includes("politica-de-privacidade")) {
+    return "privacy"
+  }
+  if (
+    hash === "#reforco-escolar" ||
+    hash === "#reforco" ||
+    path.includes("reforco-escolar") ||
+    path.includes("reforco")
+  ) {
+    return "reforco"
+  }
+  return "home"
+}
+
 export default function App() {
-  const [showPrivacy, setShowPrivacy] = useState(
-    () => window.location.hash === "#politica-de-privacidade" || window.location.pathname.includes("politica-de-privacidade")
-  )
+  const [currentPage, setCurrentPage] = useState(getInitialPage)
 
   useEffect(() => {
-    const handleHashChange = () => {
-      const isPrivacy =
-        window.location.hash === "#politica-de-privacidade" ||
-        window.location.pathname.includes("politica-de-privacidade")
-      setShowPrivacy(isPrivacy)
-      if (isPrivacy) {
+    const handleLocationChange = () => {
+      const page = getInitialPage()
+      setCurrentPage(page)
+
+      if (page === "privacy" || page === "reforco") {
         window.scrollTo({ top: 0, behavior: "smooth" })
       } else if (window.location.hash) {
         smoothScrollTo(window.location.hash, { offset: -80 })
       }
     }
 
-    window.addEventListener("hashchange", handleHashChange)
-    window.addEventListener("popstate", handleHashChange)
+    window.addEventListener("hashchange", handleLocationChange)
+    window.addEventListener("popstate", handleLocationChange)
 
     initLenis()
-    if (window.location.hash && !showPrivacy) {
+    if (window.location.hash && currentPage === "home") {
       setTimeout(() => {
         smoothScrollTo(window.location.hash, { offset: -80 })
       }, 100)
     }
 
     return () => {
-      window.removeEventListener("hashchange", handleHashChange)
-      window.removeEventListener("popstate", handleHashChange)
+      window.removeEventListener("hashchange", handleLocationChange)
+      window.removeEventListener("popstate", handleLocationChange)
     }
-  }, [showPrivacy])
+  }, [currentPage])
 
-  if (showPrivacy) {
+  const navigateToHome = () => {
+    setCurrentPage("home")
+    window.location.hash = ""
+    window.history.pushState(null, "", "/")
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
+  const navigateToPrivacy = () => {
+    setCurrentPage("privacy")
+    window.location.hash = "politica-de-privacidade"
+    window.history.pushState(null, "", "#politica-de-privacidade")
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
+
+  if (currentPage === "privacy") {
     return (
       <PrivacyPolicy
-        onBack={() => {
-          setShowPrivacy(false)
-          window.location.hash = ""
-          window.history.pushState(null, "", "/")
-          window.scrollTo({ top: 0, behavior: "smooth" })
-        }}
+        onBack={navigateToHome}
+      />
+    )
+  }
+
+  if (currentPage === "reforco") {
+    return (
+      <ReforcoEscolarPage
+        onNavigateHome={navigateToHome}
+        onNavigatePrivacy={navigateToPrivacy}
       />
     )
   }

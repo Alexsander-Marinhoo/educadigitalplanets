@@ -44,6 +44,56 @@ function IconBadgeReforco() {
 }
 
 function ProgramCard({ item }) {
+  if (item.pageLink) {
+    return (
+      <div className="bg-white rounded-2xl p-6 sm:p-7 border-2 border-[#3774B0]/40 shadow-xs hover:shadow-md hover:border-[#3774B0] transition-all duration-200 flex flex-col justify-between h-full min-h-[300px] w-full group relative">
+        <div className="absolute top-4 right-4 bg-[#9BBE1D]/25 text-[#0A2240] text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-wider">
+          Página Própria
+        </div>
+
+        <div>
+          <div className="mb-4 flex items-center justify-start">
+            {item.icon}
+          </div>
+
+          <span className="text-[11px] font-semibold text-slate-500 block mb-1">
+            {item.tag}
+          </span>
+
+          <h4 className="font-heading font-bold text-base text-[#3774B0] mb-2 leading-snug min-h-[44px] flex items-start">
+            {item.title}
+          </h4>
+
+          <p className="text-xs text-slate-600 font-normal mb-1">
+            {item.format}
+          </p>
+        </div>
+
+        <div className="pt-4 border-t border-slate-100 grid grid-cols-2 gap-2 mt-4">
+          <a
+            href={item.pageLink}
+            onClick={() => {
+              window.location.hash = "reforco-escolar"
+              window.scrollTo({ top: 0, behavior: "smooth" })
+            }}
+            className="py-3 px-2 rounded-xl bg-[#3774B0] hover:bg-[#1A4B88] text-white font-heading font-bold text-[11px] flex items-center justify-center text-center transition-colors cursor-pointer"
+          >
+            Ver Página
+          </a>
+          <a
+            href={createWhatsAppLink(item.msg)}
+            target="_blank"
+            rel="noreferrer"
+            className="py-3 px-2 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-heading font-bold text-[11px] flex items-center justify-center gap-1 text-center transition-colors cursor-pointer"
+          >
+            <img src="/whatsapp-icon.svg" alt="WhatsApp" className="w-3.5 h-3.5 object-contain" />
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <a
       href={createWhatsAppLink(item.msg)}
@@ -123,6 +173,7 @@ export default function ProgramsSection() {
       title: "Reforço Escolar Individual",
       format: "Formato: Acompanhamento Semanal",
       msg: "Olá! Gostaria de consultar horários e valores do Reforço Escolar Individual.",
+      pageLink: "#reforco-escolar",
     },
   ]
 

@@ -1,7 +1,7 @@
 import { ArrowUp } from "lucide-react"
 import { SCHOOL_INFO, createWhatsAppLink } from "../data/content"
 
-export default function Footer() {
+export default function Footer({ onNavigateHome, onNavigatePrivacy }) {
   const scrollToTop = () => {
     if (window.lenis) {
       window.lenis.scrollTo(0, { duration: 1.2 })
@@ -12,21 +12,34 @@ export default function Footer() {
 
   const handleLinkClick = (e, href) => {
     e.preventDefault()
-    if (window.lenis) {
-      if (href === "#inicio") {
+    if (href === "#inicio") {
+      if (onNavigateHome) {
+        onNavigateHome()
+      } else if (window.lenis) {
         window.lenis.scrollTo(0, { duration: 1.2 })
       } else {
-        window.lenis.scrollTo(href, { offset: -70, duration: 1.2 })
-      }
-    } else {
-      if (href === "#inicio") {
         window.scrollTo({ top: 0, behavior: "smooth" })
-      } else {
-        const element = document.querySelector(href)
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" })
-        }
       }
+      return
+    }
+
+    const element = document.querySelector(href)
+    if (!element) {
+      if (onNavigateHome) {
+        onNavigateHome()
+        setTimeout(() => {
+          window.location.hash = href
+        }, 50)
+      } else {
+        window.location.hash = href
+      }
+      return
+    }
+
+    if (window.lenis) {
+      window.lenis.scrollTo(href, { offset: -70, duration: 1.2 })
+    } else {
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
     }
   }
 
@@ -125,12 +138,15 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={createWhatsAppLink("Olá! Gostaria de informações sobre o Reforço Escolar.")}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-slate-100 hover:text-white hover:underline transition-all duration-200 cursor-pointer block"
+                  href="#reforco-escolar"
+                  onClick={() => {
+                    window.location.hash = "reforco-escolar"
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  }}
+                  className="text-slate-100 hover:text-[#9BBE1D] hover:underline transition-all duration-200 cursor-pointer flex items-center justify-between gap-2"
                 >
-                  Reforço Escolar Especializado
+                  <span>Reforço Escolar Especializado</span>
+                  <span className="text-[10px] bg-[#9BBE1D] text-[#0A2240] font-black px-1.5 py-0.5 rounded-sm uppercase">Turma Nova</span>
                 </a>
               </li>
               <li>
@@ -199,6 +215,12 @@ export default function Footer() {
             <span className="hidden sm:inline text-[#5CA8D7]">•</span>
             <a
               href="#politica-de-privacidade"
+              onClick={(e) => {
+                if (onNavigatePrivacy) {
+                  e.preventDefault()
+                  onNavigatePrivacy()
+                }
+              }}
               className="text-slate-300 hover:text-white hover:underline transition-colors cursor-pointer"
             >
               Política de Privacidade

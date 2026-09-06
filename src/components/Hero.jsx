@@ -2,7 +2,7 @@ import { createWhatsAppLink } from "../data/content"
 import { MapPin } from "lucide-react"
 
 // Educational Doodle Icons (matching the reference banner style)
-function DoodleLightbulb({ className = "w-12 h-12" }) {
+export function DoodleLightbulb({ className = "w-12 h-12" }) {
   return (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M32 8a16 16 0 0 0-16 16c0 7 4 12 7 15v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5c3-3 7-8 7-15A16 16 0 0 0 32 8z" />
@@ -12,7 +12,7 @@ function DoodleLightbulb({ className = "w-12 h-12" }) {
   )
 }
 
-function DoodleGraduationCap({ className = "w-16 h-16" }) {
+export function DoodleGraduationCap({ className = "w-16 h-16" }) {
   return (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M32 14L6 26l26 12 26-12L32 14z" />
@@ -23,7 +23,7 @@ function DoodleGraduationCap({ className = "w-16 h-16" }) {
   )
 }
 
-function DoodleBeaker({ className = "w-10 h-10" }) {
+export function DoodleBeaker({ className = "w-10 h-10" }) {
   return (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M24 10h16M28 10v12l-14 26a4 4 0 0 0 3.5 6h29a4 4 0 0 0 3.5-6L36 22V10" />
@@ -34,7 +34,7 @@ function DoodleBeaker({ className = "w-10 h-10" }) {
   )
 }
 
-function DoodlePaperPlane({ className = "w-10 h-10" }) {
+export function DoodlePaperPlane({ className = "w-10 h-10" }) {
   return (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M10 32L54 10 38 54 28 36 10 32z" />
@@ -43,7 +43,7 @@ function DoodlePaperPlane({ className = "w-10 h-10" }) {
   )
 }
 
-function DoodleDiploma({ className = "w-12 h-12" }) {
+export function DoodleDiploma({ className = "w-12 h-12" }) {
   return (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <rect x="12" y="16" width="40" height="28" rx="3" />
