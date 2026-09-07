@@ -55,7 +55,7 @@ export function DoodleDiploma({ className = "w-12 h-12" }) {
 }
 
 export default function Hero() {
-  const whatsappHeroMsg = "Olá! Gostaria de agendar uma aula experimental presencial no Jardim Silva Teles e garantir minha condição especial na Educa Digital Planets."
+  const whatsappHeroMsg = "Olá! Gostaria de agendar uma aula experimental presencial no Jardim Maia e garantir minha condição especial na Educa Digital Planets."
 
   return (
     <section
@@ -152,7 +152,7 @@ export default function Hero() {
           {/* Badge Destacado de Localização Presencial */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#3774B0]/10 border border-[#3774B0]/25 text-[#245380] text-xs sm:text-sm font-bold shadow-2xs">
             <MapPin className="w-4 h-4 text-[#16A34A] shrink-0" />
-            <span>Escola Presencial em <strong>Jardim Silva Teles • São Paulo (Zona Leste)</strong></span>
+            <span>Escola Presencial em <strong>Jardim Maia • São Paulo (Zona Leste)</strong></span>
           </div>
 
           {/* Main Punchy Title */}

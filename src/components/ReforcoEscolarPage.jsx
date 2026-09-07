@@ -59,7 +59,7 @@ export default function ReforcoEscolarPage({ onNavigateHome, onNavigatePrivacy }
     if (metaDesc) {
       metaDesc.setAttribute(
         "content",
-        "Reforço Escolar 100% Presencial no Jardim Silva Teles (Zona Leste de SP). Turmas novas para Ensino Fundamental e Médio em Matemática, Português, Redação e Provas. 20 anos de tradição."
+        "Reforço Escolar 100% Presencial no Jardim Maia (Zona Leste de SP). Turmas novas para Ensino Fundamental e Médio em Matemática, Português, Redação e Provas. 20 anos de tradição."
       )
     }
 
@@ -69,7 +69,7 @@ export default function ReforcoEscolarPage({ onNavigateHome, onNavigatePrivacy }
   }, [])
 
   const defaultWhatsappMsg =
-    "Olá! Vi o anúncio de Reforço Escolar no Jardim Silva Teles e gostaria de informações sobre vagas para a nova turma!"
+    "Olá! Vi o anúncio de Reforço Escolar no Jardim Maia e gostaria de informações sobre vagas para a nova turma!"
 
   const createReforcoWaLink = (customMsg = "") => {
     const text = customMsg || defaultWhatsappMsg
@@ -116,7 +116,7 @@ export default function ReforcoEscolarPage({ onNavigateHome, onNavigatePrivacy }
     },
     {
       q: "As aulas são presenciais ou online?",
-      a: "As aulas são 100% presenciais em nossa sede no Jardim Silva Teles (São Paulo - Zona Leste). Acreditamos que o contato humano, olho no olho, com o professor sentado ao lado do estudante sem distrações de telas é indispensável para tirar dúvidas profundas e recuperar notas com rapidez.",
+      a: "As aulas são 100% presenciais em nossa sede no Jardim Maia (São Paulo - Zona Leste). Acreditamos que o contato humano, olho no olho, com o professor sentado ao lado do estudante sem distrações de telas é indispensável para tirar dúvidas profundas e recuperar notas com rapidez.",
     },
     {
       q: "Como funciona a avaliação diagnóstica inicial?",
@@ -150,7 +150,7 @@ export default function ReforcoEscolarPage({ onNavigateHome, onNavigatePrivacy }
               Turma Nova em Formação
             </span>
             <span className="text-slate-200">
-              Aulas <strong>100% Presenciais</strong> no Jardim Silva Teles • São Paulo (Zona Leste)
+              Aulas <strong>100% Presenciais</strong> no Jardim Maia • São Paulo (Zona Leste)
             </span>
           </div>
           <div className="flex items-center gap-3 text-slate-300 text-xs">
@@ -313,7 +313,7 @@ export default function ReforcoEscolarPage({ onNavigateHome, onNavigatePrivacy }
               {/* Badge Destacado de Localização Presencial */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#3774B0]/10 border border-[#3774B0]/25 text-[#245380] text-xs sm:text-sm font-bold shadow-2xs">
                 <MapPin className="w-4 h-4 text-[#16A34A] shrink-0" />
-                <span>Escola Presencial em <strong>Jardim Silva Teles • São Paulo (Zona Leste)</strong></span>
+                <span>Escola Presencial em <strong>Jardim Maia • São Paulo (Zona Leste)</strong></span>
               </div>
 
               {/* Main Punchy Title */}

@@ -1,6 +1,6 @@
 export default function InfoTickerMarquee() {
   const items = [
-    "📍 Aulas Presenciais no Jardim Silva Teles (SP)",
+    "📍 Aulas Presenciais no Jardim Maia (SP)",
     "Inglês Prático & Conversação",
     "Informática Profissionalizante",
     "Comunicação, Vendas & Oratória",

@@ -218,7 +218,7 @@ export default function Header() {
 
           <div className="pt-2 mt-2 border-t border-slate-100 space-y-2.5">
             <div className="px-2 py-1 text-center text-xs font-semibold text-[#245380] bg-[#3774B0]/8 rounded-xl">
-              📍 Av. Prof. Alípio de Barros, 963 • Jardim Silva Teles, SP
+              📍 Av. Prof. Alípio de Barros, 963 • Jardim Maia, SP
             </div>
             <a
               href={createWhatsAppLink("Olá! Gostaria de falar com a Educa Digital Planets.")}
