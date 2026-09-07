@@ -13,7 +13,6 @@ export default function Header() {
     { name: "Início", href: "#inicio" },
     { name: "Diferenciais", href: "#diferenciais" },
     { name: "Cursos", href: "#cursos" },
-    { name: "Reforço Escolar", href: "/reforco-escolar", isPage: true },
     { name: "Metodologia", href: "#metodologia" },
     { name: "Localização", href: "#localizacao" },
     { name: "Contato", href: "#contato" },
@@ -174,22 +173,38 @@ export default function Header() {
           })}
         </div>
 
-        {/* Right: CTA Button with WhatsApp Logo & Circular Action Icon */}
-        <div className="hidden sm:flex items-center gap-2 shrink-0">
+        {/* Right: Botão Reforço Escolar (com badge Nova Turma) + Botão WhatsApp */}
+        <div className="hidden sm:flex items-center gap-2 xl:gap-2.5 shrink-0">
+          <a
+            href="/reforco-escolar"
+            onClick={(e) => {
+              e.preventDefault()
+              window.history.pushState({}, "", "/reforco-escolar")
+              window.dispatchEvent(new Event("popstate"))
+              window.scrollTo({ top: 0, behavior: "smooth" })
+            }}
+            className="group px-3 xl:px-4 py-2 rounded-full bg-[#3774B0]/10 hover:bg-[#3774B0] border border-[#3774B0]/25 text-[#1A4B88] hover:text-white font-heading font-bold text-xs xl:text-sm inline-flex items-center gap-1.5 xl:gap-2 transition-all duration-200 shadow-xs hover:shadow-md hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap cursor-pointer"
+          >
+            <span>Reforço Escolar</span>
+            <span className="text-[10px] xl:text-[11px] bg-[#9BBE1D] text-[#0A2240] px-2 py-0.5 rounded-full font-black uppercase tracking-wider group-hover:bg-white group-hover:text-[#3774B0] transition-colors shadow-2xs">
+              Nova Turma
+            </span>
+          </a>
+
           <a
             href={createWhatsAppLink("Olá! Gostaria de falar com um consultor pedagógico da Educa Digital Planets.")}
             target="_blank"
             rel="noreferrer"
-            className="group pl-4 pr-2 py-2 rounded-full bg-[#16A34A] hover:bg-[#15803D] active:bg-[#14532D] text-white font-heading font-bold text-sm xl:text-[15px] inline-flex items-center gap-2 transition-all duration-200 shadow-md hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap cursor-pointer shrink-0"
+            className="group pl-3.5 xl:pl-4 pr-2 py-2 rounded-full bg-[#16A34A] hover:bg-[#15803D] active:bg-[#14532D] text-white font-heading font-bold text-xs xl:text-[14px] inline-flex items-center gap-1.5 xl:gap-2 transition-all duration-200 shadow-md hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap cursor-pointer shrink-0"
           >
             <img
               src="/whatsapp-icon.svg"
               alt="WhatsApp"
-              className="w-5 h-5 object-contain shrink-0"
+              className="w-4 h-4 xl:w-5 xl:h-5 object-contain shrink-0"
             />
             <span>Falar no WhatsApp</span>
-            <div className="w-7 h-7 rounded-full bg-white text-[#16A34A] flex items-center justify-center group-hover:translate-x-0.5 transition-transform shrink-0 shadow-2xs">
-              <ChevronRight className="w-4 h-4 stroke-[3]" />
+            <div className="w-6 h-6 xl:w-7 xl:h-7 rounded-full bg-white text-[#16A34A] flex items-center justify-center group-hover:translate-x-0.5 transition-transform shrink-0 shadow-2xs">
+              <ChevronRight className="w-3.5 h-3.5 xl:w-4 xl:h-4 stroke-[3]" />
             </div>
           </a>
         </div>
@@ -247,6 +262,26 @@ export default function Header() {
           })}
 
           <div className="pt-2 mt-2 border-t border-slate-100 space-y-2.5">
+            <a
+              href="/reforco-escolar"
+              onClick={(e) => {
+                setIsOpen(false)
+                e.preventDefault()
+                window.history.pushState({}, "", "/reforco-escolar")
+                window.dispatchEvent(new Event("popstate"))
+                window.scrollTo({ top: 0, behavior: "smooth" })
+              }}
+              className="w-full px-4 py-2.5 rounded-2xl bg-[#3774B0]/10 hover:bg-[#3774B0]/15 border border-[#3774B0]/25 text-[#1A4B88] font-heading font-bold text-sm flex items-center justify-between shadow-2xs transition"
+            >
+              <div className="flex items-center gap-2">
+                <span>Reforço Escolar</span>
+                <span className="text-[10px] bg-[#9BBE1D] text-[#0A2240] px-2 py-0.5 rounded-full font-black uppercase tracking-wider">
+                  Nova Turma
+                </span>
+              </div>
+              <ChevronRight className="w-4 h-4 text-[#3774B0]" />
+            </a>
+
             <div className="px-2 py-1 text-center text-xs font-semibold text-[#245380] bg-[#3774B0]/8 rounded-xl">
               📍 Av. Prof. Alípio de Barros, 963 • Jardim Maia, SP
             </div>
