@@ -69,7 +69,7 @@ export default function ReforcoEscolarPage({ onNavigateHome, onNavigatePrivacy }
     }
 
     return () => {
-      document.title = "Educa Digital Planets | Cursos Profissionalizantes Presenciais em SP"
+      document.title = "Cursos Profissionalizantes na Zona Leste de SP | Educa Digital Planets"
       if (metaDesc && prevDesc) metaDesc.setAttribute("content", prevDesc)
       if (canonical) canonical.setAttribute("href", "https://www.educadigitalplanets.com.br/")
     }
