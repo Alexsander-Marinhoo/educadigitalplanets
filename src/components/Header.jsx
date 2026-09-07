@@ -183,10 +183,10 @@ export default function Header() {
               window.dispatchEvent(new Event("popstate"))
               window.scrollTo({ top: 0, behavior: "smooth" })
             }}
-            className="group px-3 xl:px-4 py-2 rounded-full bg-[#3774B0]/10 hover:bg-[#3774B0] border border-[#3774B0]/25 text-[#1A4B88] hover:text-white font-heading font-bold text-xs xl:text-sm inline-flex items-center gap-1.5 xl:gap-2 transition-all duration-200 shadow-xs hover:shadow-md hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap cursor-pointer"
+            className="group px-3.5 xl:px-4 py-2 rounded-full bg-[#3774B0] hover:bg-[#245380] active:bg-[#1A4B88] text-white font-heading font-bold text-xs xl:text-sm inline-flex items-center gap-2 transition-all duration-200 shadow-md hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap cursor-pointer"
           >
             <span>Reforço Escolar</span>
-            <span className="text-[10px] xl:text-[11px] bg-[#9BBE1D] text-[#0A2240] px-2 py-0.5 rounded-full font-black uppercase tracking-wider group-hover:bg-white group-hover:text-[#3774B0] transition-colors shadow-2xs">
+            <span className="text-[10px] xl:text-[11px] bg-[#9BBE1D] text-[#0A2240] px-2 py-0.5 rounded-full font-black uppercase tracking-wider shadow-2xs">
               Nova Turma
             </span>
           </a>
@@ -271,15 +271,15 @@ export default function Header() {
                 window.dispatchEvent(new Event("popstate"))
                 window.scrollTo({ top: 0, behavior: "smooth" })
               }}
-              className="w-full px-4 py-2.5 rounded-2xl bg-[#3774B0]/10 hover:bg-[#3774B0]/15 border border-[#3774B0]/25 text-[#1A4B88] font-heading font-bold text-sm flex items-center justify-between shadow-2xs transition"
+              className="w-full px-5 py-3 rounded-2xl bg-[#3774B0] hover:bg-[#245380] active:bg-[#1A4B88] text-white font-heading font-bold text-sm flex items-center justify-between shadow-md transition"
             >
               <div className="flex items-center gap-2">
                 <span>Reforço Escolar</span>
-                <span className="text-[10px] bg-[#9BBE1D] text-[#0A2240] px-2 py-0.5 rounded-full font-black uppercase tracking-wider">
+                <span className="text-[10px] bg-[#9BBE1D] text-[#0A2240] px-2 py-0.5 rounded-full font-black uppercase tracking-wider shadow-2xs">
                   Nova Turma
                 </span>
               </div>
-              <ChevronRight className="w-4 h-4 text-[#3774B0]" />
+              <ChevronRight className="w-4 h-4 text-white" />
             </a>
 
             <div className="px-2 py-1 text-center text-xs font-semibold text-[#245380] bg-[#3774B0]/8 rounded-xl">
