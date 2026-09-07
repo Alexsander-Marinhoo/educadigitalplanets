@@ -46,10 +46,15 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="format-detection" content="telephone=yes, date=no, address=yes, email=yes" />
 
-    <!-- Favicons, Icons & Web Manifest -->
+    <!-- Favicons, Icons & Web Manifest (Configurado para Google Search, Mobile e PWA) -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Open Graph / Facebook / WhatsApp (Rich Previews) -->
@@ -152,7 +157,49 @@
           "publisher": {
             "@id": "https://www.educadigitalplanets.com.br/#organization"
           },
-          "inLanguage": "pt-BR"
+          "inLanguage": "pt-BR",
+          "hasPart": [
+            {
+              "@type": "WebPage",
+              "@id": "https://www.educadigitalplanets.com.br/reforco-escolar",
+              "url": "https://www.educadigitalplanets.com.br/reforco-escolar",
+              "name": "Reforço Escolar Presencial em São Paulo",
+              "description": "Reforço escolar 100% presencial no Jardim Maia (Zona Leste de SP) com turmas novas para Ensino Fundamental e Médio."
+            }
+          ]
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "@id": "https://www.educadigitalplanets.com.br/#navigation",
+          "name": "Menu Principal",
+          "hasPart": [
+            {
+              "@type": "SiteNavigationElement",
+              "name": "Início",
+              "url": "https://www.educadigitalplanets.com.br/"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "name": "Reforço Escolar Presencial",
+              "url": "https://www.educadigitalplanets.com.br/reforco-escolar",
+              "description": "Apoio presencial para o seu filho recuperar notas em Matemática, Português e Redação com turmas novas no Jardim Maia."
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "name": "Cursos Presenciais",
+              "url": "https://www.educadigitalplanets.com.br/#cursos"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "name": "Localização",
+              "url": "https://www.educadigitalplanets.com.br/#localizacao"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "name": "Contato & Matrículas",
+              "url": "https://www.educadigitalplanets.com.br/#contato"
+            }
+          ]
         },
         {
           "@type": "BreadcrumbList",
@@ -167,12 +214,18 @@
             {
               "@type": "ListItem",
               "position": 2,
+              "name": "Reforço Escolar",
+              "item": "https://www.educadigitalplanets.com.br/reforco-escolar"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
               "name": "Cursos Presenciais",
               "item": "https://www.educadigitalplanets.com.br/#cursos"
             },
             {
               "@type": "ListItem",
-              "position": 3,
+              "position": 4,
               "name": "Localização e Contato",
               "item": "https://www.educadigitalplanets.com.br/#localizacao"
             }
@@ -247,6 +300,7 @@
               "@type": "Course",
               "position": 5,
               "name": "Reforço Escolar Especializado",
+              "url": "https://www.educadigitalplanets.com.br/reforco-escolar",
               "description": "Apoio pedagógico individualizado em Matemática, Português e matérias escolares para alunos do Ensino Fundamental e Médio.",
               "provider": {
                 "@id": "https://www.educadigitalplanets.com.br/#organization"

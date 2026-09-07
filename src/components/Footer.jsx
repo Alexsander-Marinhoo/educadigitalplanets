@@ -138,9 +138,11 @@ export default function Footer({ onNavigateHome, onNavigatePrivacy }) {
               </li>
               <li>
                 <a
-                  href="#reforco-escolar"
-                  onClick={() => {
-                    window.location.hash = "reforco-escolar"
+                  href="/reforco-escolar"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    window.history.pushState({}, "", "/reforco-escolar")
+                    window.dispatchEvent(new Event("popstate"))
                     window.scrollTo({ top: 0, behavior: "smooth" })
                   }}
                   className="text-slate-100 hover:text-[#9BBE1D] hover:underline transition-all duration-200 cursor-pointer flex items-center justify-between gap-2"

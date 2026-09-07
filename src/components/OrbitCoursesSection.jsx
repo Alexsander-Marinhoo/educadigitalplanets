@@ -124,7 +124,7 @@ export default function OrbitCoursesSection() {
       iconComponent: <IconOrbitTutoring />,
       position: "bottom-8 sm:bottom-10 md:bottom-12 right-1 sm:right-4 md:right-8 lg:right-12",
       msg: "Olá! Gostaria de saber mais sobre o Reforço Escolar na Educa Digital Planets.",
-      pageLink: "#reforco-escolar",
+      pageLink: "/reforco-escolar",
       isNew: true,
     },
   ]
@@ -289,8 +289,10 @@ export default function OrbitCoursesSection() {
                 rel={isReforco ? undefined : "noreferrer"}
                 onClick={
                   isReforco
-                    ? () => {
-                        window.location.hash = "reforco-escolar"
+                    ? (e) => {
+                        e.preventDefault()
+                        window.history.pushState({}, "", "/reforco-escolar")
+                        window.dispatchEvent(new Event("popstate"))
                         window.scrollTo({ top: 0, behavior: "smooth" })
                       }
                     : undefined

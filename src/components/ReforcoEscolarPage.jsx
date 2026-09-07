@@ -50,12 +50,12 @@ export default function ReforcoEscolarPage({ onNavigateHome, onNavigatePrivacy }
   const [submitted, setSubmitted] = useState(false)
   const [activeFaq, setActiveFaq] = useState(null)
 
-  // Rolagem suave ao topo ao carregar a página
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" })
     document.title = "Reforço Escolar Presencial em São Paulo | Educa Digital Planets"
 
     const metaDesc = document.querySelector('meta[name="description"]')
+    const prevDesc = metaDesc ? metaDesc.getAttribute("content") : ""
     if (metaDesc) {
       metaDesc.setAttribute(
         "content",
@@ -63,8 +63,15 @@ export default function ReforcoEscolarPage({ onNavigateHome, onNavigatePrivacy }
       )
     }
 
+    const canonical = document.querySelector('link[rel="canonical"]')
+    if (canonical) {
+      canonical.setAttribute("href", "https://www.educadigitalplanets.com.br/reforco-escolar")
+    }
+
     return () => {
       document.title = "Educa Digital Planets | Cursos Profissionalizantes Presenciais em SP"
+      if (metaDesc && prevDesc) metaDesc.setAttribute("content", prevDesc)
+      if (canonical) canonical.setAttribute("href", "https://www.educadigitalplanets.com.br/")
     }
   }, [])
 
@@ -176,8 +183,12 @@ export default function ReforcoEscolarPage({ onNavigateHome, onNavigatePrivacy }
           
           {/* Logo Oficial da Escola */}
           <div className="flex items-center">
-            <button
-              onClick={onNavigateHome}
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault()
+                onNavigateHome()
+              }}
               className="flex items-center cursor-pointer group text-left py-0.5"
               title="Voltar à página principal da escola"
             >
@@ -187,7 +198,7 @@ export default function ReforcoEscolarPage({ onNavigateHome, onNavigatePrivacy }
                 className="h-14 sm:h-16 md:h-18 lg:h-20 w-auto max-w-[180px] sm:max-w-[220px] md:max-w-[260px] object-contain transition-transform duration-300 group-hover:scale-105"
                 loading="eager"
               />
-            </button>
+            </a>
           </div>
 
           {/* Navegação Rápida & Botões em Destaque */}

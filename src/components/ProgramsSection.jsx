@@ -72,8 +72,10 @@ function ProgramCard({ item }) {
         <div className="pt-4 border-t border-slate-100 grid grid-cols-2 gap-2 mt-4">
           <a
             href={item.pageLink}
-            onClick={() => {
-              window.location.hash = "reforco-escolar"
+            onClick={(e) => {
+              e.preventDefault()
+              window.history.pushState({}, "", item.pageLink)
+              window.dispatchEvent(new Event("popstate"))
               window.scrollTo({ top: 0, behavior: "smooth" })
             }}
             className="py-3 px-2 rounded-xl bg-[#3774B0] hover:bg-[#1A4B88] text-white font-heading font-bold text-[11px] flex items-center justify-center text-center transition-colors cursor-pointer"
@@ -173,7 +175,7 @@ export default function ProgramsSection() {
       title: "Reforço Escolar Individual",
       format: "Formato: Acompanhamento Semanal",
       msg: "Olá! Gostaria de consultar horários e valores do Reforço Escolar Individual.",
-      pageLink: "#reforco-escolar",
+      pageLink: "/reforco-escolar",
     },
   ]
 

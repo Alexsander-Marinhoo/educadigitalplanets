@@ -13,6 +13,7 @@ export default function Header() {
     { name: "Início", href: "#inicio" },
     { name: "Diferenciais", href: "#diferenciais" },
     { name: "Cursos", href: "#cursos" },
+    { name: "Reforço Escolar", href: "/reforco-escolar", isPage: true },
     { name: "Metodologia", href: "#metodologia" },
     { name: "Localização", href: "#localizacao" },
     { name: "Contato", href: "#contato" },
@@ -59,8 +60,28 @@ export default function Header() {
     }
   }, [])
 
-  const handleNavClick = (e, href) => {
+  const handleNavClick = (e, href, isPage = false) => {
     setIsOpen(false)
+
+    if (isPage || href.startsWith("/")) {
+      e.preventDefault()
+      window.history.pushState({}, "", href)
+      window.dispatchEvent(new Event("popstate"))
+      window.scrollTo({ top: 0, behavior: "smooth" })
+      return
+    }
+
+    if (window.location.pathname.includes("reforco-escolar")) {
+      e.preventDefault()
+      window.history.pushState({}, "", "/" + href)
+      window.dispatchEvent(new Event("popstate"))
+      setTimeout(() => {
+        const el = document.querySelector(href)
+        if (el) el.scrollIntoView({ behavior: "smooth" })
+      }, 100)
+      return
+    }
+
     e.preventDefault()
 
     const targetId = href.replace("#", "")
@@ -108,8 +129,17 @@ export default function Header() {
       >
         {/* Left: Logo Only */}
         <a
-          href="#inicio"
-          onClick={(e) => handleNavClick(e, "#inicio")}
+          href="/"
+          onClick={(e) => {
+            if (window.location.pathname.includes("reforco-escolar")) {
+              e.preventDefault()
+              window.history.pushState({}, "", "/")
+              window.dispatchEvent(new Event("popstate"))
+              window.scrollTo({ top: 0, behavior: "smooth" })
+            } else {
+              handleNavClick(e, "#inicio")
+            }
+          }}
           className="flex items-center shrink-0 group cursor-pointer py-0.5"
           title="Educa Digital Planets"
         >
@@ -122,23 +152,30 @@ export default function Header() {
         </a>
 
         {/* Center: Larger Floating Pill Navigation Track */}
-        <div className="hidden lg:flex items-center justify-center gap-1.5 xl:gap-2.5 bg-[#3774B0]/8 p-1.5 rounded-full border border-[#3774B0]/15 shadow-2xs">
+        <div className="hidden lg:flex items-center justify-center gap-1 xl:gap-2 bg-[#3774B0]/8 p-1.5 rounded-full border border-[#3774B0]/15 shadow-2xs">
           {navLinks.map((link) => {
             const targetId = link.href.replace("#", "")
-            const isActive = activeSection === targetId
+            const isActive = activeSection === targetId && !link.isPage
 
             return (
               <a
                 key={link.name}
                 href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={`px-4 xl:px-5 py-2 rounded-full text-sm xl:text-[15px] font-sans font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap ${
+                onClick={(e) => handleNavClick(e, link.href, link.isPage)}
+                className={`px-3.5 xl:px-4 py-2 rounded-full text-xs xl:text-sm font-sans font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap inline-flex items-center gap-1.5 ${
                   isActive
                     ? "bg-[#3774B0] text-white font-bold shadow-sm scale-[1.02]"
+                    : link.isPage
+                    ? "text-[#0A2240] bg-[#9BBE1D]/25 hover:bg-[#9BBE1D]/40 font-bold border border-[#9BBE1D]/50"
                     : "text-[#3774B0] hover:bg-[#3774B0]/15"
                 }`}
               >
-                {link.name}
+                <span>{link.name}</span>
+                {link.isPage && (
+                  <span className="text-[10px] bg-[#9BBE1D] text-[#0A2240] px-1.5 py-0.2 rounded-full font-black uppercase tracking-wider">
+                    Novo
+                  </span>
+                )}
               </a>
             )
           })}
@@ -198,20 +235,27 @@ export default function Header() {
         <div className="pointer-events-auto lg:hidden mt-2 w-full bg-white/98 backdrop-blur-md border border-[#3774B0]/20 rounded-3xl p-4 space-y-2 shadow-2xl animate-in fade-in slide-in-from-top-1 duration-200">
           {navLinks.map((link) => {
             const targetId = link.href.replace("#", "")
-            const isActive = activeSection === targetId
+            const isActive = activeSection === targetId && !link.isPage
 
             return (
               <a
                 key={link.name}
                 href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={`block px-5 py-3 rounded-2xl text-sm font-sans transition-colors ${
+                onClick={(e) => handleNavClick(e, link.href, link.isPage)}
+                className={`flex items-center justify-between px-5 py-3 rounded-2xl text-sm font-sans transition-colors ${
                   isActive
                     ? "bg-[#3774B0] text-white font-bold shadow-xs"
+                    : link.isPage
+                    ? "text-[#0A2240] bg-[#9BBE1D]/25 font-bold border border-[#9BBE1D]/40"
                     : "text-[#3774B0] hover:bg-[#3774B0]/10 font-semibold"
                 }`}
               >
-                {link.name}
+                <span>{link.name}</span>
+                {link.isPage && (
+                  <span className="text-[10px] bg-[#9BBE1D] text-[#0A2240] px-2 py-0.5 rounded-full font-black uppercase">
+                    Novo
+                  </span>
+                )}
               </a>
             )
           })}
