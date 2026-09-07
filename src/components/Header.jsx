@@ -162,20 +162,13 @@ export default function Header() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href, link.isPage)}
-                className={`px-3.5 xl:px-4 py-2 rounded-full text-xs xl:text-sm font-sans font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap inline-flex items-center gap-1.5 ${
+                className={`px-3.5 xl:px-4 py-2 rounded-full text-xs xl:text-sm font-sans font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap ${
                   isActive
                     ? "bg-[#3774B0] text-white font-bold shadow-sm scale-[1.02]"
-                    : link.isPage
-                    ? "text-[#0A2240] bg-[#9BBE1D]/25 hover:bg-[#9BBE1D]/40 font-bold border border-[#9BBE1D]/50"
                     : "text-[#3774B0] hover:bg-[#3774B0]/15"
                 }`}
               >
-                <span>{link.name}</span>
-                {link.isPage && (
-                  <span className="text-[10px] bg-[#9BBE1D] text-[#0A2240] px-1.5 py-0.2 rounded-full font-black uppercase tracking-wider">
-                    Novo
-                  </span>
-                )}
+                {link.name}
               </a>
             )
           })}
@@ -242,20 +235,13 @@ export default function Header() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href, link.isPage)}
-                className={`flex items-center justify-between px-5 py-3 rounded-2xl text-sm font-sans transition-colors ${
+                className={`block px-5 py-3 rounded-2xl text-sm font-sans transition-colors ${
                   isActive
                     ? "bg-[#3774B0] text-white font-bold shadow-xs"
-                    : link.isPage
-                    ? "text-[#0A2240] bg-[#9BBE1D]/25 font-bold border border-[#9BBE1D]/40"
                     : "text-[#3774B0] hover:bg-[#3774B0]/10 font-semibold"
                 }`}
               >
-                <span>{link.name}</span>
-                {link.isPage && (
-                  <span className="text-[10px] bg-[#9BBE1D] text-[#0A2240] px-2 py-0.5 rounded-full font-black uppercase">
-                    Novo
-                  </span>
-                )}
+                {link.name}
               </a>
             )
           })}
